@@ -1,5 +1,5 @@
 {
-  "name": "laravelrus/sleepingowl",
+  "name": "guzru/sleepingowl",
   "description": "Administrative interface builder for Laravel.",
   "homepage": "http://sleeping-owl.github.io",
   "keywords": ["laravel", "admin", "administrator", "crud"],
