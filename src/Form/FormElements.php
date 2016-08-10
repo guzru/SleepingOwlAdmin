@@ -9,7 +9,7 @@ class FormElements extends FormElement implements ElementsInterface
 {
     use \SleepingOwl\Admin\Traits\FormElements;
 
-    private $validationRules;
+    public $validationRules;
 
     /**
      * Column constructor.
