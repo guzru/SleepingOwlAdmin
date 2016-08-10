@@ -9,6 +9,8 @@ class FormElements extends FormElement implements ElementsInterface
 {
     use \SleepingOwl\Admin\Traits\FormElements;
 
+    private $validationRules;
+
     /**
      * Column constructor.
      *
@@ -39,11 +41,24 @@ class FormElements extends FormElement implements ElementsInterface
         return $this->setModelForElements($model);
     }
 
+    public function setValidationRules($rules)
+    {
+        $this->validationRules = $rules;
+    }
+
     /**
      * @return array
      */
     public function getValidationRules()
     {
+        if($this->validationRules)
+            return $this->validationRules;
+
+        if(method_exists($this->model, 'getValidationRules')) {
+            $validationRules = $this->model->getValidationRules();
+            if($validationRules) return $validationRules;
+        }
+
         return $this->getValidationRulesFromElements(
             parent::getValidationRules()
         );
