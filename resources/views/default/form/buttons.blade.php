@@ -36,7 +36,9 @@
     </div>
 
     @if($showDeleteButton)
-        <button class="btn btn-delete btn-danger btn-flat" data-url="{!! $deleteUrl !!}" data-redirect="{{ $backUrl }}">
+        <button class="btn btn-delete btn-danger btn-flat" 
+            onclick="if(!confirm('Are you sure you want to delete this entry?')) return false;"
+            data-url="{!! $deleteUrl !!}" data-redirect="{{ $backUrl }}">
             <i class="fa fa-trash"></i> {{ $deleteButtonText }}
         </button>
     @elseif($showRestoreButton)
