@@ -20,7 +20,7 @@
         {!! $icon !!}
         <span>{!! $title !!}</span>
         <span class="pull-right-container">
-              {!! $badge !!}
+              
         </span>
     </a>
 </li>
